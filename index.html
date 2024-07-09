@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptación y Desencriptación de Texto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.svg" alt="Logo">
+        </div>
+        <div class="left">
+            <textarea id="input-text" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="buttons">
+                <button class="encrypt" onclick="encryptText()">Encriptar</button>
+                <button class="decrypt" onclick="decryptText()">Desencriptar</button>
+            </div>
+        </div>
+
+        <!-- Aquí va caja de texto no encontrado -->
+        <div class="right">
+            <img src="img/muñeco.svg" alt="img" >
+            <h2>Ningún mensaje fue encontrado</h2>
+            <h5>Ingresa el texto que desees encriptar o desencriptar.</h5>
+        </div>
+
+    </div>
+    <script>
+        // Función para encriptar el texto
+        function encryptText() {
+            var input = document.getElementById('input-text').value;
+            // Aquí irá la lógica de encriptación
+            // Por ahora, solo mostramos el texto encriptado en la caja
+            document.getElementById('encrypted-text').innerText = input;
+        }
+
+        // Función para desencriptar el texto
+        function decryptText() {
+            var encryptedText = document.getElementById('encrypted-text').innerText;
+            // Aquí irá la lógica de desencriptación
+            // Por ahora, mostramos el texto en la misma caja
+            document.getElementById('encrypted-text').innerText = encryptedText;
+        }
+    </script>
+</body>
+</html>
