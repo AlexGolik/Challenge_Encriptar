@@ -20,30 +20,18 @@
             </div>
         </div>
 
-        <!-- Aquí va caja de texto no encontrado -->
-        <div class="right">
-            <img src="img/muñeco.svg" alt="img" >
-            <h2>Ningún mensaje fue encontrado</h2>
-            <h5>Ingresa el texto que desees encriptar o desencriptar.</h5>
+        <!-- Aquí va caja de texto encriptado -->
+        <div class="right" id="right-container">
+            <img src="img/muñeco.svg" alt="img" id="placeholder-img">
+            <h2 id="placeholder-h2">Ningún mensaje fue encontrado</h2>
+            <h5 id="placeholder-h5">Ingresa el texto que desees encriptar o desencriptar.</h5>
+            <textarea class="en" id="encrypted-text" placeholder="El texto encriptado aparecerá aquí" readonly style="display: none;"></textarea>
+            <button  id="copiar" class="nuevo" onclick="copyText()" style="display: none;">Copiar</button>
+            <div id="message-container"></div>
         </div>
+        
 
     </div>
-    <script>
-        // Función para encriptar el texto
-        function encryptText() {
-            var input = document.getElementById('input-text').value;
-            // Aquí irá la lógica de encriptación
-            // Por ahora, solo mostramos el texto encriptado en la caja
-            document.getElementById('encrypted-text').innerText = input;
-        }
-
-        // Función para desencriptar el texto
-        function decryptText() {
-            var encryptedText = document.getElementById('encrypted-text').innerText;
-            // Aquí irá la lógica de desencriptación
-            // Por ahora, mostramos el texto en la misma caja
-            document.getElementById('encrypted-text').innerText = encryptedText;
-        }
-    </script>
+    <script src="Js/main.js"></script>
 </body>
 </html>
