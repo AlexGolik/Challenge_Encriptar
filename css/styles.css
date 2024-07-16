@@ -2,29 +2,36 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f2f5;
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente  */
+    height: 100vh; /* 100% del viewport height */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    background-color: #f0f2f5; /* Color de fondo */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 125px;
+    margin: 20px; 
+    color: #0a3871;
 }
 .container {
     display: flex;
     width: 100%;
     height: 100%;
-    max-width: 1350px;
+    max-width: 1440px;
     background-color: #fff;
-    overflow: hidden; /* ocultar el desbordamiento */
 }
 .left, .right {
-    flex: 1;
+    flex: 1; 
     padding: 40px;
 }
 .left {
     margin-top: 100px;
 }
-.left h2,{
+.left h2 {
     margin-bottom: 20px;
     color: #0a3871;
 }
@@ -71,7 +78,7 @@ textarea {
     outline: none; /* elimina el borde azul al hacer clic en la textarea */
     font-size: 24px;
     font-family: 'Inter';
-}    
+}
 
 textarea::placeholder {
     color: #0a3871; /* Cambia el color del placeholder aquí */
@@ -101,7 +108,7 @@ button.encrypt {
     color: #fff;
 }
 
-button.nuevo{
+button.nuevo {
     background-color: #f0f2f5;
     color: #0a3871;
     border: 1px solid #0a3871;
@@ -112,11 +119,10 @@ button.nuevo{
     height: 55px;
     justify-content: center;
 }
-button.nuevo:hover{
+button.nuevo:hover {
     background-color: #094691;
     color: #fff;
 }
-
 
 button.decrypt {
     background-color: #f0f2f5;
@@ -161,4 +167,166 @@ button.decrypt:hover {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+/* Media Queries */
+@media (max-width: 1050px) { 
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        max-width: 1050px;
+        background-color: #fff;
+    }
+
+    .left, .right {
+        padding: 20px;
+    }
+
+    textarea {
+        height: 300px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 5px; /* Espacio entre los botones */
+    }
+
+    button {
+        width: 200px;
+        height: 45px;
+    }
+
+    button.nuevo {
+        margin-top: 20px;
+        width: 200px;
+        height: 45px;
+    }
+
+    #encrypted-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10%;
+        margin-top: 20px;
+        color: #0a6adf;
+        text-align: center;
+        font-size: 18px;
+        border: none #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        box-sizing: border-box; /* incluir el relleno y el borde en el ancho y alto */
+    }
+}
+
+
+@media (max-width: 768px) { 
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .left, .right {
+        padding: 20px;
+    }
+
+    textarea {
+        height: 300px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 5px; /* Espacio entre los botones */
+    }
+
+    button {
+        width: 200px;
+        height: 45px;
+    }
+
+    button.nuevo {
+        margin-top: 20px;
+        width: 200px;
+        height: 45px;
+    }
+
+    #encrypted-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10%;
+        margin-top: 20px;
+        color: #1e2a39;
+        text-align: center;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        box-sizing: border-box; /* incluir el relleno y el borde en el ancho y alto */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .right {
+        max-width: none;
+        height: auto;
+        margin: 15px;
+    }
+
+    .right img {
+        margin-top: 50px;
+    }
+
+    button {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    button.nuevo {
+        margin-top: 10px;
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        left: 50px;
+    }
+
+    .left, .right {
+        padding: 10px;
+    }
+
+    button {
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    button.nuevo {
+        margin-top: 10px;
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    textarea {
+        height: 150px;
+        font-size: 18px;
+    }
 }
